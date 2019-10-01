@@ -7,7 +7,7 @@ gocron is a time-based job scheduler for golang golang applicacions. gocron can 
 gocron allows us to create tasks to be repeated:
 
 ```
-cancel = gocron.Do(context.Background(), time.Now(), 2*time.Second, tt.func(ctx context.Context, tick time.Time, cancel context.CancelFunc) (context.Context, error) {					
+cancel = gocron.Do(context.Background(), time.Now(), 2*time.Second, func(ctx context.Context, tick time.Time, cancel context.CancelFunc) (context.Context, error) {					
 		counter := ctx.Value("counter").(int)
 		if counter == 2 {
 			cancel()
