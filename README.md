@@ -17,3 +17,5 @@ cancel = gocron.Do(context.Background(), time.Now(), 2*time.Second, func(ctx con
 		return context.WithValue(ctx, "counter", counter), nil
 	})
 ```
+
+The function Do(...) will return a cancel function to cancel the timer when needed.
